@@ -27,16 +27,16 @@
 // *****
 // *****
 
-let m = 5;
-let n = 8;
-for (let i = 0; i < m; i++) {
-    let str = ""
-    for (let j = 0; j < i; j++) {
-        // str=str+"*";
-        str += j;
-    }
-    console.log(str);
-}
+// let m = 5;
+// let n = 8;
+// for (let i = 0; i < m; i++) {
+//     let str = ""
+//     for (let j = 0; j < i; j++) {
+//         // str=str+"*";
+//         str += j;
+//     }
+//     console.log(str);
+// }
 
 // i=> rows
 // *       i=0,j=0

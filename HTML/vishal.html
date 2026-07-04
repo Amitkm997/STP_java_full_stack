@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="tab-buttons">
+            <button class="tab-btn" data-tab="1" id="btn"> Button1</button>
+            <button class="tab-btn" data-tab="2" id="btn"> Button2</button>
+            <button class="tab-btn" data-tab="3"> Button3</button>
+            <button class="tab-btn" data-tab="4"> Button4</button>
+        </div>
+
+        <div class="tab-content">
+            <div class="tab-content" data-content="1">
+                <h3 id="content1"></h3>
+            </div>
+
+            <div class="tab-content" data-content="2" >
+                <h3></h3>
+            </div>
+
+            <div class="tab-content" data-content="3">
+                <h3>Content3</h3>
+            </div>
+
+            <div class="tab-content" data-content="4">
+                <h3>Content4</h3>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // const button= document.getElementById("btn");
+        // const content1=document.getElementById("content1");
+
+        // button.addEventListener('click',function(){
+        //     content1.innerHTML="Content-1"
+        // })
+const buttons = document.querySelectorAll(".tab-btn");
+console.log(buttons);
+const contents = document.querySelectorAll(".tab-pane");
+
+buttons.forEach((button) => {
+
+    button.addEventListener("click", () => {
+
+        const selectedTab = button.dataset.tab;
+
+        // Remove active class from all buttons
+        buttons.forEach((btn) => {
+            btn.classList.remove("active");
+        });
+
+        // Add active class to clicked button
+        button.classList.add("active");
+
+        // Show matching content
+        contents.forEach((content) => {
+
+            if (content.dataset.content === selectedTab) {
+                content.classList.add("active");
+            } else {
+                content.classList.remove("active");
+            }
+
+        });
+
+    });
+
+});
+    </script>
+</body>
+</html>

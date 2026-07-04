@@ -76,19 +76,20 @@
 
 // objects 
 
-let obj={
-    id:1,
-    name:"Amit",
-    occupation:"Trainer"
-}
+// let obj={
+//     id:1,
+//     name:"Amit",
+//     occupation:"Trainer"
+// }
 
 // console.log(obj.name)
 
 // console.log(obj['id']);
 
-obj.name="Naina"
-obj.studentName="Vishal"
+// obj.name="Naina"
+// obj.studentName="Vishal"
 
-delete obj.id
+// delete obj.id
 
-console.log(obj)
+// console.log(obj)
+
