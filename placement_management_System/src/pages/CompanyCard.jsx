@@ -6,7 +6,7 @@ function CompanyCard({companyName,salaryPackage,location}){
     
     return(
         <>
-           <h3 className="bg-white">{companyName}</h3>
+           <h3 className="text-red-500">{companyName}</h3>
            <p>package:{salaryPackage}</p>
            <p>location:{location}</p>
         </>
