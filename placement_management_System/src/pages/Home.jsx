@@ -1,7 +1,7 @@
 import React from 'react'
 import CompanyCard from './CompanyCard'
 import Company from './components/Company'
-
+import Register from './components/Register'
 export default function Home() {
    return(
     <>
@@ -35,6 +35,8 @@ export default function Home() {
         </div>
       </div>
     </section>
+
+    <Register/>
       
       {/* <Company/> */}
     </>
