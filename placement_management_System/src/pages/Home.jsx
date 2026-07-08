@@ -1,7 +1,8 @@
 import React from 'react'
 import CompanyCard from './CompanyCard'
 import Company from './components/Company'
-import Register from './components/Register'
+import { Link } from 'react-router-dom'
+
 export default function Home() {
    return(
     <>
@@ -11,7 +12,7 @@ export default function Home() {
         <h1 className='text-5xl font-bold text-blue-700 mb-4'>Welcome to Placement Portal</h1>
         <p className='text-4xl text-gray-700 mb-8'>Helping Students Get their Dream Jobs.</p>
         <div className='flex justify-center gap-4'>
-          <button className='bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700'>Register Now</button>
+          <button className='bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700'><Link to='/register'>Register Now</Link></button>
           <button className='bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700'>View Companies</button>
         </div>
        </div>
@@ -35,8 +36,6 @@ export default function Home() {
         </div>
       </div>
     </section>
-
-    <Register/>
       
       {/* <Company/> */}
     </>

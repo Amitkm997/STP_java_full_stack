@@ -3,8 +3,6 @@
 
 
 
-
-
 import React, { useState } from 'react'
 
 export default function Register() {
@@ -26,6 +24,33 @@ export default function Register() {
        })
     }
 
+    const validateForm=()=>{
+        if(!formData.name.trim()){
+          alert("please provide name");
+        }
+
+        if(!formData.email.trim()){
+          alert("Please provide email");
+        }
+
+        if(!formData.password.trim()){
+          alert("Please provide password");
+        }
+         if(!formData.skills.trim()){
+          alert("Please provide skills");
+        }
+    }
+
+    const handleSubmit=function(e){
+        e.preventDefault(); // prevents reloading
+        if(!validateForm()){
+          return;
+        }else{
+           alert("Form submitted successfully")
+        }
+       
+    }
+
   return (
     <>
       <div className='min-h-screen bg-gay-100 py-10 px-5 '>
@@ -33,7 +58,7 @@ export default function Register() {
             {/* Registration Form  */}
             <div className='bg-white shadow-lg rounded-xl p-8'>
                 <h1 className='text-3xl font-bold text-center text-blue-600 mb-8'>Student Registration Form</h1>
-                <form className='space-y-5'>
+                <form className='space-y-5' onSubmit={handleSubmit}>
                     <label className='block mb-2 font-semibold'>Full Name</label>
                     <input type="text" 
                     placeholder='Enter your name'
