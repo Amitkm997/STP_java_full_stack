@@ -1,12 +1,7 @@
-
-
-
-
-
 import React, { useState } from 'react'
-
+import { useNavigate } from 'react-router-dom';
 export default function Register() {
-
+    const navigate=useNavigate();// initilized
     const[formData,setFormData]=useState({
         
         email:"",
@@ -37,6 +32,7 @@ export default function Register() {
 
     const handleSubmit=function(e){
        e.preventDefault()
+       navigate('/')
         if(!validateForm()){
           return;
         }else{
@@ -73,6 +69,7 @@ export default function Register() {
                     
                     <button type='submit'
                     className='bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700'>Login</button>
+                    <p onClick={()=>navigate('/register')}>Register</p>
                 </form>
 
             </div>

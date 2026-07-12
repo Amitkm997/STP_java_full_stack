@@ -16,17 +16,19 @@ import Navbar from "./pages/Navbar"
 import Student from "./Student"
 import Login from '../src/pages/components/Login'
 import {Routes,Route} from 'react-router-dom'
+import Contact from "./pages/Contact"
 function App() {
   return (
     <>
        <Navbar/>
        <Routes>
-           <Route path='/' element={<Home/>}></Route>
+          <Route path='/' element={<Home/>}></Route>
           <Route path="/register" element={<Register/>}/>
           <Route path="/about" element={<About/>}></Route>
           <Route path="/companies" element={<Company/>}></Route>
           <Route path="/login" element={<Login/>}></Route>
-       </Routes>o
+          <Route path="/contact" element={<Contact/>}/>
+       </Routes>
        <Footer/>
     </>
   )

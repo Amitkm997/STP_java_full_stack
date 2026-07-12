@@ -4,9 +4,9 @@
 
 
 import React, { useState } from 'react'
-
+import { useNavigate } from 'react-router-dom';
 export default function Register() {
-
+    const navigat=useNavigate();
     const[formData,setFormData]=useState({
         name:"",
         email:"",
@@ -45,79 +45,174 @@ export default function Register() {
         e.preventDefault(); // prevents reloading
         if(!validateForm()){
           return;
-        }else{
-           alert("Form submitted successfully")
         }
-       
+        alert("Form submitted successfully")  
     }
 
   return (
     <>
-      <div className='min-h-screen bg-gay-100 py-10 px-5 '>
-        <div className='max-w-6xl mx-auto grid md:grid-cols-2 gap-10 '>
-            {/* Registration Form  */}
-            <div className='bg-white shadow-lg rounded-xl p-8'>
-                <h1 className='text-3xl font-bold text-center text-blue-600 mb-8'>Student Registration Form</h1>
-                <form className='space-y-5' onSubmit={handleSubmit}>
-                    <label className='block mb-2 font-semibold'>Full Name</label>
-                    <input type="text" 
-                    placeholder='Enter your name'
-                    value={formData.name}
-                    name="name"
-                    onChange={handleChange}
-                    className='w-full' border rounded-lg p-3 focus:ring-2 focus:ring-blue-200 outline-none
-                    />
-                    <label className='block mb-2 font-semibold'>Email</label>
-                    <input type="email" 
-                    placeholder='Enter your Email'
-                    name='email'
-                    value={formData.email}
-                    onChange={handleChange}
-                    className='w-full' border rounded-lg p-3 focus:ring-2 focus:ring-blue-200 outline-none
-                    />
-                    <label className='block mb-2 font-semibold'>Password</label>
-                    <input type="password" 
-                    placeholder='Enter your password'
-                    name='password'
-                    value={formData.password}
-                    onChange={handleChange}
-                    className='w-full' border rounded-lg p-3 focus:ring-2 focus:ring-blue-200 outline-none
-                    />
-                    <label className='block mb-2 font-semibold'>Skills</label>
-                    <input type="text" 
-                    placeholder='Nodejs Springboot java'
-                    name='skills'
-                    value={formData.skills}
-                    onChange={handleChange}
-                    className='w-full' border rounded-lg p-3 focus:ring-2 focus:ring-blue-200 outline-none
-                    />
-                    <label className='block mb-2 font-semibold'>Role</label>
-                    <input type="text" 
-                    // placeholder='E'
-                    value={formData.role}
-                    onChange={handleChange}
-                    className='w-full' border rounded-lg p-3 focus:ring-2 focus:ring-blue-200 outline-none
-                    />
-                    <button type='submit'
-                    className='bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700'>Submit</button>
-                </form>
+      <div className="min-h-screen bg-gray-100 py-10 px-5">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10">
 
+        {/* Registration Form */}
+
+        <div className="bg-white shadow-lg rounded-xl p-8">
+
+          <h1 className="text-3xl font-bold text-center text-blue-600 mb-8">
+            Student Registration
+          </h1>
+          <form onSubmit={handleSubmit} className="space-y-5">
+
+            {/* Name */}
+
+            <div>
+              <label className="block mb-2 font-semibold">
+                Full Name
+              </label>
+
+              <input
+                type="text"
+                name="name"
+                placeholder="Enter Full Name"
+                value={formData.name}
+                onChange={handleChange}
+                className="w-full border rounded-lg p-3 focus:ring-2 focus:ring-blue-500 outline-none"
+              />
+
+            
             </div>
-            {/* Live Preview  */}
-            <div className='bg-white shadow-lg rounded-xl p-8'>
-               <h2 className='text-3xl font-bold text-center text-blue-600 mb-8'>Live Preview</h2>
-               <div className='space-y-4 text-lg' >
-               <p><strong>Name:</strong>{formData.name}</p>
-               <p><strong>Email:</strong>{formData.email}</p>
-               <p><strong>password:</strong>{formData.password}</p>
-               <p><strong>course:</strong>{formData.course}</p>
-               <p><strong>skills:</strong>{formData.skills}</p>
-               <p><strong>role:</strong>{formData.role}</p>
-               </div>
+
+            {/* Email */}
+
+            <div>
+              <label className="block mb-2 font-semibold">
+                Email
+              </label>
+
+              <input
+                type="email"
+                name="email"
+                placeholder="Enter Email"
+                value={formData.email}
+                onChange={handleChange}
+                className="w-full border rounded-lg p-3 focus:ring-2 focus:ring-blue-500 outline-none"
+              />
+
+              
             </div>
+
+            {/* Password */}
+
+            <div>
+              <label className="block mb-2 font-semibold">
+                Password
+              </label>
+
+              <input
+                type="password"
+                name="password"
+                placeholder="Enter Password"
+                value={formData.password}
+                onChange={handleChange}
+                className="w-full border rounded-lg p-3 focus:ring-2 focus:ring-blue-500 outline-none"
+              />
+
+              
+            </div>
+
+            {/* Course */}
+
+            <div>
+              <label className="block mb-2 font-semibold">
+                Course
+              </label>
+
+              <input
+                type="text"
+                name="course"
+                placeholder="Enter Course"
+                value={formData.course}
+                onChange={handleChange}
+                className="w-full border rounded-lg p-3 focus:ring-2 focus:ring-blue-500 outline-none"
+              />
+
+              
+            </div>
+
+            {/* Skills */}
+
+            <div>
+              <label className="block mb-2 font-semibold">
+                Skills
+              </label>
+
+              <input
+                type="text"
+                name="skills"
+                placeholder="React, Node.js, MongoDB"
+                value={formData.skills}
+                onChange={handleChange}
+                className="w-full border rounded-lg p-3 focus:ring-2 focus:ring-blue-500 outline-none"
+              />
+
+              
+            </div>
+
+            {/* Role */}
+
+            <div>
+              <label className="block mb-2 font-semibold">
+                Role
+              </label>
+
+              <input
+                type="text"
+                value={formData.role}
+                readOnly
+                className="w-full border rounded-lg p-3 bg-gray-200 cursor-not-allowed"
+              />
+            </div>
+
+            <button
+              type="submit"
+              onClick={()=>navigat('/')}
+              className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white font-semibold py-3 rounded-lg transition"
+            >
+             Register Student
+            </button>
+
+          </form>
+
+        </div>
+
+        {/* Live Preview */}
+
+        <div className="bg-white shadow-lg rounded-xl p-8">
+
+          <h2 className="text-3xl font-bold text-green-600 text-center mb-6">
+            Live Preview
+          </h2>
+
+          <div className="space-y-4 text-lg">
+
+            <p><strong>Name:</strong> {formData.name || "-"}</p>
+
+            <p><strong>Email:</strong> {formData.email || "-"}</p>
+
+            <p><strong>Password:</strong> {formData.password || "-"}</p>
+
+            <p><strong>Course:</strong> {formData.course || "-"}</p>
+
+            <p><strong>Skills:</strong> {formData.skills || "-"}</p>
+
+            <p><strong>Role:</strong> {formData.role}</p>
+
+          </div>
+
         </div>
 
       </div>
+    </div>
     </>
   )
 }
