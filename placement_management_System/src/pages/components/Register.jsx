@@ -6,7 +6,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 export default function Register() {
-    const navigat=useNavigate();
+    const navigate=useNavigate();
     const[formData,setFormData]=useState({
         name:"",
         email:"",
@@ -27,26 +27,36 @@ export default function Register() {
     const validateForm=()=>{
         if(!formData.name.trim()){
           alert("please provide name");
+          return false;
         }
 
         if(!formData.email.trim()){
           alert("Please provide email");
+          return false;
         }
 
         if(!formData.password.trim()){
           alert("Please provide password");
+          return false;
         }
          if(!formData.skills.trim()){
           alert("Please provide skills");
+          return false;
         }
+
+        return true;
     }
 
     const handleSubmit=function(e){
         e.preventDefault(); // prevents reloading
         if(!validateForm()){
           return;
+        }else{
+          alert("Form submitted successfully")  
         }
-        alert("Form submitted successfully")  
+
+        navigate('/login')
+        
     }
 
   return (
@@ -175,12 +185,12 @@ export default function Register() {
 
             <button
               type="submit"
-              onClick={()=>navigat('/')}
+              // onClick={()=>navigat('/')}
               className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 text-white font-semibold py-3 rounded-lg transition"
             >
              Register Student
             </button>
-
+            
           </form>
 
         </div>

@@ -22,22 +22,28 @@ export default function Register() {
 
         if(!formData.email.trim()){
           alert("Please provide email");
+          return false;
         }
 
         if(!formData.password.trim()){
           alert("Please provide password");
+          return false;
         }
+
+        return true;
         
     }
 
     const handleSubmit=function(e){
        e.preventDefault()
-       navigate('/')
+     
         if(!validateForm()){
           return;
         }else{
            alert("Form submitted successfully")
         }
+          
+        navigate('/')
        
     }
 

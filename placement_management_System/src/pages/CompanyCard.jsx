@@ -1,7 +1,9 @@
-function CompanyCard({name,salaryPackage,location,role}){
+
+import { useNavigate } from "react-router-dom";
+function CompanyCard({id,name,salaryPackage,location,role}){
     // console.log(companyName)
     // const{companyName,salaryPackage,location}=props
-    
+    const navigate=useNavigate();
     return(
         <>
              <div className="bg-white rounded-2xl shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden border border-gray-200">
@@ -72,7 +74,7 @@ function CompanyCard({name,salaryPackage,location,role}){
 
         </div>
 
-        <button
+        <button onClick={()=>navigate(`/companies/${id}`)}
           className="w-full mt-4 bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-semibold transition duration-300"
         >
           View Details →

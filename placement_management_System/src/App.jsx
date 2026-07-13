@@ -17,6 +17,7 @@ import Student from "./Student"
 import Login from '../src/pages/components/Login'
 import {Routes,Route} from 'react-router-dom'
 import Contact from "./pages/Contact"
+import CompaniesDetails from "./pages/CompaniesDetails"
 function App() {
   return (
     <>
@@ -28,6 +29,7 @@ function App() {
           <Route path="/companies" element={<Company/>}></Route>
           <Route path="/login" element={<Login/>}></Route>
           <Route path="/contact" element={<Contact/>}/>
+          <Route path="/companies/:id" element={<CompaniesDetails/>}/>
        </Routes>
        <Footer/>
     </>
