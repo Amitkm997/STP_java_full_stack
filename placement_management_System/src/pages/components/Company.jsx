@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {companies} from '../Companies'
 import CompanyCard from '../CompanyCard'
 export default function Company() {
-   
+   const[companyList,setCompanyList]=useState([])
+    
+   useEffect(()=>{
+      setCompanyList(companies)
+   },[])
+
   return (
      <section className='bg-gray-100 py-16'>
          {/* Top Hiring Comapanies  */}
@@ -12,7 +17,7 @@ export default function Company() {
                 {/* <CompanyCard name="Google" role="Software Enginner" salaryPackage="18 LPA" />
                 <CompanyCard name="Google" role="Software Enginner" salaryPackage="18 LPA" />
                 <CompanyCard name="Google" role="Software Enginner" salaryPackage="18 LPA" /> */}
-                {companies.map((cur)=>{
+                {companyList.map((cur)=>{
                    return <CompanyCard key={cur.id}  id={cur.id} name={cur.companyName} role={cur.role} salaryPackage={cur.salaryPackage}/>
                 })}
               </div>

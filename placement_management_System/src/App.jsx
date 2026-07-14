@@ -18,9 +18,11 @@ import Login from '../src/pages/components/Login'
 import {Routes,Route} from 'react-router-dom'
 import Contact from "./pages/Contact"
 import CompaniesDetails from "./pages/CompaniesDetails"
+import UseEffect from "./pages/components/UseEffect"
 function App() {
   return (
-    <>
+    <> 
+       {/* <UseEffect/> */}
        <Navbar/>
        <Routes>
           <Route path='/' element={<Home/>}></Route>
