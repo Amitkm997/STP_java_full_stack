@@ -1,12 +1,3 @@
-
-
-
-
-
-
-
-
-
 import About from "./pages/About"
 import Company from "./pages/components/Company"
 import Register from "./pages/components/Register"
